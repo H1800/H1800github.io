@@ -5,64 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宁波青苗智能科技有限公司</title>
     <style>
-        /* 这里可以写一些简单的样式，让页面更好看 */
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 40px 24px;
             line-height: 1.8;
-            color: #333;
+            color: #1a1a2e;
+            background: #fafafa;
         }
-        h1 { color: #1a73e8; }
-        .section { margin: 40px 0; }
-        .tag { 
-            display: inline-block; 
-            background: #f0f4ff; 
-            padding: 4px 12px; 
-            border-radius: 4px; 
+        h1 {
+            color: #1a5fb4;
+            font-size: 32px;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-top: 0;
+        }
+        .divider {
+            border: none;
+            border-top: 2px solid #e8e8e8;
+            margin: 32px 0;
+        }
+        .section {
+            background: #ffffff;
+            padding: 24px 28px;
+            border-radius: 12px;
+            margin: 24px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            color: #1a5fb4;
+            font-size: 22px;
+            margin-top: 0;
+            border-bottom: 3px solid #eef3fc;
+            padding-bottom: 8px;
+        }
+        .section h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+            color: #222;
+        }
+        .tag {
+            display: inline-block;
+            background: #eef3fc;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #1a5fb4;
+            margin-right: 6px;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            padding: 8px 0;
+        }
+        .stats span {
+            background: #f0f4ff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 15px;
+        }
+        .stats strong {
+            color: #1a5fb4;
+            font-size: 18px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        ul li {
+            margin: 6px 0;
+        }
+        .partner-list {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a1a2e;
+            line-height: 2.2;
+        }
+        .btn {
+            display: inline-block;
+            background: #1a5fb4;
+            color: #fff;
+            padding: 10px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .btn:hover {
+            background: #0f4a8a;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #999;
             font-size: 14px;
-            color: #1a73e8;
+            border-top: 1px solid #e8e8e8;
+            margin-top: 32px;
+        }
+        .footer a {
+            color: #1a5fb4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            body { padding: 20px 16px; }
+            .section { padding: 18px 16px; }
+            h1 { font-size: 26px; }
         }
     </style>
 </head>
 <body>
 
     <h1>宁波青苗智能科技有限公司</h1>
-    <p style="font-size:18px; color:#555;">
-        聚焦汽配与跨境电商，<br>
-        提供信息化·自动化·数字化·智能化整体解决方案
-    </p>
+    <p class="subtitle">聚焦汽配与跨境电商，<br>提供信息化·自动化·数字化·智能化整体解决方案</p>
     <p>
-        <a href="#">了解更多 →</a> | <a href="#">关于我们</a>
+        <a href="#">了解更多 →</a> &nbsp;|&nbsp; <a href="#">关于我们</a>
     </p>
     <p style="color:#999; font-size:14px;">↓ 向下探索</p>
 
-    <!-- 关于青苗智能 -->
+    <hr class="divider">
+
     <div class="section">
         <h2>关于青苗智能</h2>
-        <p>
-            宁波青苗智能科技有限公司成立于 2021年，是"一院一中心"重点孵化的科技企业，也是浙江大学孵化的创业公司。公司总部位于浙江省宁波市鄞州区，入驻e舟智慧产业园。
-        </p>
-        <p>
-            公司聚焦于 <strong>汽配</strong> 与 <strong>跨境电商</strong> 两大行业，定位于"供应链四化整体解决方案服务商"，核心产品涵盖 Oracle Netsuite 及 OMS/WMS/TMS 等供应链管理系统。
-        </p>
+        <p>宁波青苗智能科技有限公司成立于 2021年，是"一院一中心"重点孵化的科技企业，也是浙江大学孵化的创业公司。公司总部位于浙江省宁波市鄞州区，入驻e舟智慧产业园。</p>
+        <p>公司聚焦于 <strong>汽配</strong> 与 <strong>跨境电商</strong> 两大行业，定位于"供应链四化整体解决方案服务商"，核心产品涵盖 Oracle Netsuite 及 OMS/WMS/TMS 等供应链管理系统。</p>
         <a href="#">查看完整介绍 →</a>
     </div>
 
-    <!-- 数据统计 -->
     <div class="section">
-        <span class="tag">2021</span> 成立年份 &nbsp;&nbsp;
-        <span class="tag">10+</span> 资深顾问 &nbsp;&nbsp;
-        <span class="tag">6+</span> 服务行业 &nbsp;&nbsp;
-        <span class="tag">50+</span> 服务企业
+        <h2>核心数据</h2>
+        <div class="stats">
+            <span><strong>2021</strong> 成立年份</span>
+            <span><strong>10+</strong> 资深顾问</span>
+            <span><strong>6+</strong> 服务行业</span>
+            <span><strong>50+</strong> 服务企业</span>
+        </div>
     </div>
 
-    <!-- 核心产品 -->
     <div class="section">
         <h2>核心产品</h2>
         <p style="color:#666;">从仓储管理到企业数字化，为客户提供端到端的供应链解决方案</p>
-        
+
         <h3>WMS 仓库管理系统</h3>
         <p>覆盖入库、出库、盘点、调拨全流程，支持智能策略制定与数字化运营，是公司的核心优势产品。</p>
         <span class="tag">核心产品</span>
@@ -76,7 +166,6 @@
         <span class="tag">供应链</span>
     </div>
 
-    <!-- 核心优势 -->
     <div class="section">
         <h2>核心优势</h2>
         <p style="color:#666;">技术驱动，专业团队，为客户创造真实价值</p>
@@ -88,24 +177,22 @@
         </ul>
     </div>
 
-    <!-- 合作伙伴 -->
     <div class="section">
         <h2>合作伙伴与客户</h2>
         <p style="color:#666;">客户覆盖新能源、汽车零部件、高端装备制造等多个领域</p>
-        <p style="font-size:18px; font-weight:bold;">
-            比亚迪 万向 丰田 航泰军工 孚能科技 浙江爱信宏达 温州电信 浙江大学
-        </p>
+        <p class="partner-list">比亚迪 &nbsp; 万向 &nbsp; 丰田 &nbsp; 航泰军工 &nbsp; 孚能科技 &nbsp; 浙江爱信宏达 &nbsp; 温州电信 &nbsp; 浙江大学</p>
     </div>
 
-    <!-- 底部 -->
-    <div class="section" style="border-top:1px solid #eee; padding-top:20px;">
+    <div class="section" style="text-align:center;">
         <h2>开启数字化转型之旅</h2>
-        <p>联系我们，了解青苗智能如何助力您的企业实现供应链四化升级</p>
-        <a href="#" style="display:inline-block; background:#1a73e8; color:#fff; padding:10px 30px; border-radius:6px; text-decoration:none;">联系我们 →</a>
-        <p style="margin-top:20px; color:#999; font-size:14px;">
-            <a href="#">首页</a> | <a href="#">公司介绍</a> | <a href="#">产品中心</a> | <a href="#">联系我们</a>
-        </p>
-        <p style="color:#bbb; font-size:12px;">© 2026 宁波青苗智能科技有限公司</p>
+        <p style="color:#666;">联系我们，了解青苗智能如何助力您的企业实现供应链四化升级</p>
+        <a href="#" class="btn">联系我们 →</a>
+    </div>
+
+    <div class="footer">
+        <a href="#">首页</a> | <a href="#">公司介绍</a> | <a href="#">产品中心</a> | <a href="#">联系我们</a>
+        <br><br>
+        © 2026 宁波青苗智能科技有限公司
     </div>
 
 </body>
