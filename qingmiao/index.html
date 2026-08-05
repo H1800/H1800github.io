@@ -37,6 +37,13 @@ body{
   text-shadow:0 1px 12px rgba(0,0,0,0.3)
 }
 .hero-actions{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap;justify-content:center}
+.hero-logo{
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;border-radius:18px;padding:12px 20px;
+  box-shadow:0 10px 34px rgba(0,0,0,.28);
+  width:clamp(160px,26vw,240px)
+}
+.hero-logo img{display:block;width:100%;height:auto}
 .hero .btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:13px 36px;border-radius:999px;
@@ -202,6 +209,12 @@ body{
   font-size:13px;color:#9ca3af;
   border-top:1px solid #eef2f6
 }
+.footer-logo{display:flex;justify-content:center;margin-bottom:16px}
+.footer-logo img{
+  height:46px;width:auto;object-fit:contain;
+  background:#fff;border-radius:10px;padding:5px 14px;
+  box-shadow:0 2px 10px rgba(36,120,243,.08)
+}
 .footer a{color:#2478f3;text-decoration:none}
 .footer a:hover{text-decoration:underline}
 .footer .links{margin-bottom:8px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
@@ -238,6 +251,9 @@ body{
 
 <section class="hero" id="top">
   <div class="hero-content">
+    <div class="hero-logo">
+      <img src="logo.png" alt="宁波青苗智能科技有限公司">
+    </div>
     <h1>宁波青苗智能科技有限公司</h1>
     <p>聚焦汽配与跨境电商，<br>提供信息化·自动化·数字化·智能化整体解决方案</p>
     <div class="hero-actions">
@@ -255,8 +271,8 @@ body{
   <div class="about-grid">
     <div class="about-text">
       <h3>关于青苗智能</h3>
-      <p>宁波青苗智能科技有限公司成立于<strong>2021年</strong>，是<strong>"一院一中心"重点孵化的科技企业</strong>，也是<strong>浙江大学孵化</strong>的创业公司。公司总部位于浙江省宁波市鄯州区，入驻e舟智慧产业园。</p>
-      <p>公司聚焦于<strong>汽配</strong>与<strong>跨境电商</strong>两大行业，定位于<strong>"供应链四化整体解决方案服务商"</strong>，核心产品涵盖 Oracle Netsuite 及 OMS/WMS/TMS 等供应链管理系统。</p>
+      <p>宁波青苗智能科技有限公司成立于<strong>2021年</strong>，是<strong>"一院一中心"重点孵化的科技企业</strong>，也是<strong>浙江大学孵化</strong>的创业公司。公司总部位于浙江省宁波市鄞州区，入驻e舟智慧产业园。</p>
+      <p>公司聚焦于<strong>汽配</strong>与<strong>跨境电商</strong>两大行业，定位于<strong>"供应链四化整体解决方案服务商"</strong>，核心产品涵盖 OMS/WMS/TMS 等供应链管理系统。</p>
       <a class="btn-link" href="info.html">查看完整介绍 →</a>
     </div>
     <div class="about-stats">
@@ -330,6 +346,7 @@ body{
     <span class="client-item">航泰军工</span>
     <span class="client-item">孚能科技</span>
     <span class="client-item">浙江爱信宏达</span>
+    <span class="client-item">宁波精华电子</span>
     <span class="client-item">温州电信</span>
     <span class="client-item">浙江大学</span>
   </div>
@@ -342,6 +359,9 @@ body{
 </div>
 
 <div class="footer">
+  <div class="footer-logo">
+    <img src="logo.png" alt="宁波青苗智能科技有限公司">
+  </div>
   <div class="links">
     <a href="index.html">首页</a>
     <a href="info.html">公司介绍</a>
