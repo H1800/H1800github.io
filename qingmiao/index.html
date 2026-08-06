@@ -233,6 +233,8 @@ body{
 }
 .gotop.show{opacity:1;pointer-events:auto}
 .gotop:hover{background:#2478f3;color:#fff;border-color:#2478f3;transform:translateY(-2px)}
+.lang-switch{position:fixed;top:18px;right:18px;z-index:100;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 10px rgba(0,0,0,.08);font-size:13px;color:#1a3a6f;cursor:pointer;font-weight:600;transition:all .3s}
+.lang-switch:hover{background:#eef2ff;transform:translateY(-1px)}
 
 /* ===== 响应式 ===== */
 @media(max-width:768px){
@@ -244,25 +246,27 @@ body{
   .hero-actions{flex-direction:column;align-items:center}
   .hero .btn{width:100%;max-width:280px;justify-content:center}
   .stat-card{padding:20px 16px}
+  .lang-switch{top:14px;right:14px;padding:7px 12px;font-size:12px}
 }
 </style>
 </head>
-<body>
+<body data-i18n-page-title="index.pageTitle">
 
+<button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">EN</button>
 <section class="hero" id="top">
   <div class="hero-content">
     <div class="hero-logo">
-      <img src="logo.png" alt="宁波青苗智能科技有限公司">
+      <img src="logo.png" alt="宁波青苗智能科技有限公司" data-i18n-alt="index.brandAlt">
     </div>
-    <h1>宁波青苗智能科技有限公司</h1>
-    <p>聚焦汽配与跨境电商，<br>提供信息化·自动化·数字化·智能化整体解决方案</p>
+    <h1 data-i18n="index.heroTitle">宁波青苗智能科技有限公司</h1>
+    <p data-i18n-html="index.heroSub">聚焦汽配与跨境电商，<br>提供信息化·自动化·数字化·智能化整体解决方案</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="info.html">了解更多 →</a>
-      <a class="btn" href="#about">关于我们</a>
+      <a class="btn btn-primary" href="info.html" data-i18n="index.learnMore">了解更多 →</a>
+      <a class="btn" href="#about" data-i18n="index.aboutBtn">关于我们</a>
     </div>
   </div>
   <div class="scroll-hint">
-    <span>向下探索</span>
+    <span data-i18n="index.scrollHint">向下探索</span>
     <div class="arrow"></div>
   </div>
 </section>
@@ -270,109 +274,110 @@ body{
 <section class="section" id="about">
   <div class="about-grid">
     <div class="about-text">
-      <h3>关于青苗智能</h3>
-      <p>宁波青苗智能科技有限公司成立于<strong>2021年</strong>，是<strong>"一院一中心"重点孵化的科技企业</strong>，也是<strong>浙江大学孵化</strong>的创业公司。公司总部位于浙江省宁波市鄞州区，入驻e舟智慧产业园。</p>
-      <p>公司聚焦于<strong>汽配</strong>与<strong>跨境电商</strong>两大行业，定位于<strong>"供应链四化整体解决方案服务商"</strong>，核心产品涵盖 OMS/WMS/TMS 等供应链管理系统。</p>
-      <a class="btn-link" href="info.html">查看完整介绍 →</a>
+      <h3 data-i18n="index.aboutTitle">关于青苗智能</h3>
+      <p data-i18n-html="index.aboutP1">宁波青苗智能科技有限公司成立于<strong>2021年</strong>，是<strong>"一院一中心"重点孵化的科技企业</strong>，也是<strong>浙江大学孵化</strong>的创业公司。公司总部位于浙江省宁波市鄞州区，入驻e舟智慧产业园。</p>
+      <p data-i18n-html="index.aboutP2">公司聚焦于<strong>汽配</strong>与<strong>跨境电商</strong>两大行业，定位于<strong>"供应链四化整体解决方案服务商"</strong>，核心产品涵盖 OMS/WMS/TMS 等供应链管理系统。</p>
+      <a class="btn-link" href="info.html" data-i18n="index.fullIntro">查看完整介绍 →</a>
     </div>
     <div class="about-stats">
-      <div class="stat-card"><div class="num">2021</div><div class="label">成立年份</div></div>
-      <div class="stat-card"><div class="num">10+</div><div class="label">资深顾问</div></div>
-      <div class="stat-card"><div class="num">6+</div><div class="label">服务行业</div></div>
-      <div class="stat-card"><div class="num">50+</div><div class="label">服务企业</div></div>
+      <div class="stat-card"><div class="num">2021</div><div class="label" data-i18n="index.stat1Label">成立年份</div></div>
+      <div class="stat-card"><div class="num">10+</div><div class="label" data-i18n="index.stat2Label">资深顾问</div></div>
+      <div class="stat-card"><div class="num">6+</div><div class="label" data-i18n="index.stat3Label">服务行业</div></div>
+      <div class="stat-card"><div class="num">50+</div><div class="label" data-i18n="index.stat4Label">服务企业</div></div>
     </div>
   </div>
 </section>
 
 <section class="section" id="products">
-  <h2 class="section-title">核心产品</h2>
-  <p class="section-sub">从仓储管理到企业数字化，为客户提供端到端的供应链解决方案</p>
+  <h2 class="section-title" data-i18n="index.productsTitle">核心产品</h2>
+  <p class="section-sub" data-i18n="index.productsSub">从仓储管理到企业数字化，为客户提供端到端的供应链解决方案</p>
   <div class="product-grid">
     <div class="product-card">
       <span class="icon">📦</span>
-      <h4>WMS 仓库管理系统</h4>
-      <p>覆盖入库、出库、盘点、调拨全流程，支持智能策略制定与数字化运营，是公司的核心优势产品。</p>
-      <span class="product-tag">核心产品</span>
+      <h4 data-i18n="index.productWmsTitle">WMS 仓库管理系统</h4>
+      <p data-i18n="index.productWmsDesc">覆盖入库、出库、盘点、调拨全流程，支持智能策略制定与数字化运营，是公司的核心优势产品。</p>
+      <span class="product-tag" data-i18n="index.coreTag">核心产品</span>
     </div>
     <div class="product-card">
       <span class="icon">📋</span>
-      <h4>OMS 订单管理系统</h4>
-      <p>支持多渠道订单统一管理，涵盖订单接收、审核、拆分、合并及物流追踪，适用于电商及跨境贸易。</p>
-      <span class="product-tag">供应链</span>
+      <h4 data-i18n="index.productOmsTitle">OMS 订单管理系统</h4>
+      <p data-i18n="index.productOmsDesc">支持多渠道订单统一管理，涵盖订单接收、审核、拆分、合并及物流追踪，适用于电商及跨境贸易。</p>
+      <span class="product-tag" data-i18n="index.supplyTag">供应链</span>
     </div>
     <div class="product-card">
       <span class="icon">🚚</span>
-      <h4>TMS 运输管理系统</h4>
-      <p>运输计划、运力调度、在途监控及费用结算全流程管理，支持多模式运输，优化物流成本。</p>
-      <span class="product-tag">供应链</span>
+      <h4 data-i18n="index.productTmsTitle">TMS 运输管理系统</h4>
+      <p data-i18n="index.productTmsDesc">运输计划、运力调度、在途监控及费用结算全流程管理，支持多模式运输，优化物流成本。</p>
+      <span class="product-tag" data-i18n="index.supplyTag">供应链</span>
     </div>
   </div>
 </section>
 
 <section id="advantages">
-  <h2 class="section-title">核心优势</h2>
-  <p class="section-sub">技术驱动，专业团队，为客户创造真实价值</p>
+  <h2 class="section-title" data-i18n="index.advTitle">核心优势</h2>
+  <p class="section-sub" data-i18n="index.advSub">技术驱动，专业团队，为客户创造真实价值</p>
   <div class="adv-grid">
     <div class="adv-item">
       <span class="icon">🎯</span>
-      <h4>针对式设计</h4>
-      <p>深入了解业务痛点，量身定制解决方案</p>
+      <h4 data-i18n="index.adv1Title">针对式设计</h4>
+      <p data-i18n="index.adv1Desc">深入了解业务痛点，量身定制解决方案</p>
     </div>
     <div class="adv-item">
       <span class="icon">🤝</span>
-      <h4>陪伴式交付</h4>
-      <p>实施部署到系统上线全程陪跑</p>
+      <h4 data-i18n="index.adv2Title">陪伴式交付</h4>
+      <p data-i18n="index.adv2Desc">实施部署到系统上线全程陪跑</p>
     </div>
     <div class="adv-item">
       <span class="icon">📊</span>
-      <h4>指标化落地</h4>
-      <p>以量化指标评估实施效果</p>
+      <h4 data-i18n="index.adv3Title">指标化落地</h4>
+      <p data-i18n="index.adv3Desc">以量化指标评估实施效果</p>
     </div>
     <div class="adv-item">
       <span class="icon">🔗</span>
-      <h4>全链路协同</h4>
-      <p>MES-WMS-WCS 设备端到端协同管理</p>
+      <h4 data-i18n="index.adv4Title">全链路协同</h4>
+      <p data-i18n="index.adv4Desc">MES-WMS-WCS 设备端到端协同管理</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="clients">
-  <h2 class="section-title">合作伙伴与客户</h2>
-  <p class="section-sub">客户覆盖新能源、汽车零部件、高端装备制造等多个领域</p>
+  <h2 class="section-title" data-i18n="index.clientsTitle">合作伙伴与客户</h2>
+  <p class="section-sub" data-i18n="index.clientsSub">客户覆盖新能源、汽车零部件、高端装备制造等多个领域</p>
   <div class="client-logos">
-    <span class="client-item">比亚迪</span>
-    <span class="client-item">万向</span>
-    <span class="client-item">丰田</span>
-    <span class="client-item">航泰军工</span>
-    <span class="client-item">孚能科技</span>
-    <span class="client-item">浙江爱信宏达</span>
-    <span class="client-item">宁波精华电子</span>
-    <span class="client-item">温州电信</span>
-    <span class="client-item">浙江大学</span>
+    <span class="client-item" data-i18n="index.client1">比亚迪</span>
+    <span class="client-item" data-i18n="index.client2">万向</span>
+    <span class="client-item" data-i18n="index.client3">丰田</span>
+    <span class="client-item" data-i18n="index.client4">航泰军工</span>
+    <span class="client-item" data-i18n="index.client5">孚能科技</span>
+    <span class="client-item" data-i18n="index.client6">浙江爱信宏达</span>
+    <span class="client-item" data-i18n="index.client7">宁波精华电子</span>
+    <span class="client-item" data-i18n="index.client8">温州电信</span>
+    <span class="client-item" data-i18n="index.client9">浙江大学</span>
   </div>
 </section>
 
 <div class="cta-section">
-  <h2>开启数字化转型之旅</h2>
-  <p>联系我们，了解青苗智能如何助力您的企业实现供应链四化升级</p>
-  <a class="btn-cta" href="info.html?page=contact">联系我们 →</a>
+  <h2 data-i18n="index.ctaTitle">开启数字化转型之旅</h2>
+  <p data-i18n="index.ctaDesc">联系我们，了解青苗智能如何助力您的企业实现供应链四化升级</p>
+  <a class="btn-cta" href="info.html?page=contact" data-i18n="index.ctaBtn">联系我们 →</a>
 </div>
 
 <div class="footer">
   <div class="footer-logo">
-    <img src="logo.png" alt="宁波青苗智能科技有限公司">
+    <img src="logo.png" alt="宁波青苗智能科技有限公司" data-i18n-alt="index.brandAlt">
   </div>
   <div class="links">
-    <a href="index.html">首页</a>
-    <a href="info.html">公司介绍</a>
-    <a href="info.html?page=product">产品中心</a>
-    <a href="info.html?page=contact">联系我们</a>
+    <a href="index.html" data-i18n="index.footerHome">首页</a>
+    <a href="info.html" data-i18n="index.footerIntro">公司介绍</a>
+    <a href="info.html?page=product" data-i18n="index.footerProducts">产品中心</a>
+    <a href="info.html?page=contact" data-i18n="index.footerContact">联系我们</a>
   </div>
-  &copy; 2026 宁波青苗智能科技有限公司
+  <span data-i18n="index.copyright">&copy; 2026 宁波青苗智能科技有限公司</span>
 </div>
 
 <a class="gotop" id="gotop" href="#top">↑</a>
 
+<script src="i18n.js"></script>
 <script>
 var gotop=document.getElementById('gotop');
 window.addEventListener('scroll',function(){

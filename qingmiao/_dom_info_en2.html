@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ningbo Qingmiao Intelligent Technology Co., Ltd.</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f8faff;min-height:100vh;color:#1f2937;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 500px 350px at 5% 5%,rgba(36,120,243,0.06) 0%,transparent 100%),radial-gradient(ellipse 600px 450px at 95% 95%,rgba(99,102,241,0.04) 0%,transparent 100%);pointer-events:none;z-index:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.header{background:linear-gradient(135deg,#1a3a6f,#2478f3,#4f8cf7);padding:48px 24px 40px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:"";position:absolute;inset:0;background:radial-gradient(circle 300px at 20% -20%,rgba(255,255,255,0.08) 0%,transparent 100%),radial-gradient(circle 200px at 80% 120%,rgba(255,255,255,0.06) 0%,transparent 100%);pointer-events:none}
+.header h1{font-size:28px;font-weight:600;color:#fff;letter-spacing:2px;position:relative;z-index:1}
+.header p{color:rgba(255,255,255,.7);font-size:14px;margin-top:6px;position:relative;z-index:1}
+.header-logo{display:flex;justify-content:center;margin-bottom:16px;position:relative;z-index:1}
+.header-logo img{
+  width:clamp(150px,26vw,220px);height:auto;display:block;
+  background:#fff;border-radius:14px;padding:8px 16px;
+  box-shadow:0 8px 26px rgba(0,0,0,.22)
+}
+.back-btn{position:absolute;left:24px;top:50%;transform:translateY(-50%);text-decoration:none;color:#fff;font-size:14px;display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;background:rgba(255,255,255,.12);backdrop-filter:blur(4px);transition:all .25s;z-index:2}
+.back-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-50%) translateX(-2px)}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:8px;max-width:900px;margin:-20px auto 0;padding:0 24px;justify-content:center;position:relative;z-index:2}
+.nav-tabs a{padding:10px 24px;border-radius:999px;text-decoration:none;font-size:14px;color:#4b5563;cursor:pointer;transition:all .25s ease;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 8px rgba(0,0,0,.04);font-weight:500}
+.nav-tabs a:hover{background:#eef2ff;border-color:rgba(36,120,243,.2);transform:translateY(-1px)}
+.nav-tabs a.active{background:linear-gradient(135deg,#2478f3,#4f8cf7);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(36,120,243,.3)}
+.main{max-width:900px;margin:0 auto;padding:0 24px 60px;position:relative;z-index:1}
+.page-section{display:none;padding-top:36px;animation:fadeUp .45s ease}
+.page-section.active{display:block}
+.page-title{font-size:22px;font-weight:700;color:#111827;padding-bottom:16px;border-bottom:2px solid #2478f3;margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.page-title::before{content:"";width:4px;height:24px;background:linear-gradient(to bottom,#2478f3,#6366f1);border-radius:2px;display:inline-block}
+.card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:16px;padding:28px 32px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(255,255,255,.6);transition:box-shadow .3s,transform .3s}
+.card:hover{box-shadow:0 8px 28px rgba(36,120,243,.06)}
+.card h3{font-size:17px;color:#111827;margin-bottom:12px;font-weight:600}
+.card p{font-size:15px;line-height:1.8;color:#4b5563}
+.card ul{list-style:none;padding:0}
+.card li{font-size:15px;line-height:1.8;color:#4b5563;padding:6px 0 6px 22px;position:relative}
+.card li::before{content:"";width:6px;height:6px;background:linear-gradient(135deg,#2478f3,#6366f1);border-radius:50%;position:absolute;left:0;top:14px}
+.values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.value-item{background:linear-gradient(135deg,#f8fafc,#f0f4ff);border-radius:12px;padding:24px 16px;text-align:center;border:1px solid rgba(36,120,243,.08);transition:transform .3s,box-shadow .3s}
+.value-item:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(36,120,243,.08)}
+.value-item .icon{font-size:30px;margin-bottom:10px}
+.value-item h4{font-size:15px;color:#111827;margin-bottom:6px}
+.value-item p{font-size:13px;color:#6b7280;line-height:1.6}
+.info-table{width:100%;border-collapse:collapse;font-size:14px}
+.info-table td{padding:10px 12px;border-bottom:1px solid #f3f4f6}
+.info-table td:first-child{color:#6b7280;width:100px;white-space:nowrap;vertical-align:top;font-weight:500}
+.info-table td:last-child{color:#111827}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery-item{overflow:hidden;border-radius:10px;border:1px solid rgba(36,120,243,.08);background:#f8faff}
+.gallery-item img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .35s}
+.gallery-item:hover img{transform:scale(1.03)}
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.product-card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-radius:16px;padding:26px 24px;border:1px solid rgba(255,255,255,.6);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;position:relative;overflow:hidden}
+.product-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2478f3,#818cf8);opacity:0;transition:opacity .35s}
+.product-card:hover::before{opacity:1}
+.product-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 40px rgba(36,120,243,.12)}
+.product-card .emoji{font-size:34px;margin-bottom:12px;display:block}
+.product-card h4{font-size:16px;color:#111827;margin-bottom:8px;font-weight:600}
+.product-card p{font-size:14px;color:#6b7280;line-height:1.7}
+.product-tag{display:inline-block;padding:3px 12px;border-radius:999px;background:linear-gradient(135deg,#eef2ff,#e0e7ff);color:#2478f3;font-size:12px;margin-top:10px;font-weight:500}
+.news-item{padding:20px 0;border-bottom:1px solid #f0f2f5}
+.news-item:last-child{border-bottom:none}
+.news-item .date{font-size:13px;color:#9ca3af;margin-bottom:4px}
+.news-item h4{font-size:15px;color:#111827;margin-bottom:6px;font-weight:500}
+.news-item p{font-size:14px;color:#6b7280;line-height:1.6}
+.news-item .news-link{display:inline-block;margin-top:8px;padding:5px 18px;background:linear-gradient(135deg,#eef2ff,#e0e7ff);color:#2478f3;border-radius:8px;font-size:13px;text-decoration:none;font-weight:500;transition:all .25s}
+.news-item .news-link:hover{background:linear-gradient(135deg,#2478f3,#4f8cf7);color:#fff;transform:translateY(-1px)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;padding:18px 16px;background:linear-gradient(135deg,#f8fafc,#f0f4ff);border-radius:12px;border:1px solid rgba(36,120,243,.06);transition:transform .3s,box-shadow .3s}
+.contact-item:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(36,120,243,.08)}
+.contact-item .emoji{font-size:22px;flex-shrink:0;margin-top:2px}
+.contact-item .label{font-size:13px;color:#9ca3af;margin-bottom:2px}
+.contact-item .value{font-size:15px;color:#111827;font-weight:500}
+.service-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.flow-step{text-align:center;padding:22px 14px;background:linear-gradient(135deg,#f8fafc,#f0f4ff);border-radius:12px;border:1px solid rgba(36,120,243,.06);transition:transform .3s}
+.flow-step:hover{transform:translateY(-3px)}
+.flow-step .step-num{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#2478f3,#6366f1);color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;box-shadow:0 2px 8px rgba(36,120,243,.25)}
+.flow-step h4{font-size:14px;color:#111827;margin-bottom:4px;font-weight:600}
+.flow-step p{font-size:12px;color:#6b7280;line-height:1.5}
+.footer{text-align:center;padding:32px 24px;font-size:13px;color:#9ca3af;border-top:1px solid #eef2f6;margin-top:20px;position:relative;z-index:1}
+.footer a{color:#2478f3;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.lang-switch{position:fixed;top:18px;right:18px;z-index:100;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 10px rgba(0,0,0,.08);font-size:13px;color:#1a3a6f;cursor:pointer;font-weight:600;transition:all .3s}
+.lang-switch:hover{background:#eef2ff;transform:translateY(-1px)}
+@media(max-width:768px){
+.header{padding:40px 20px 36px}
+.header h1{font-size:22px}
+.back-btn{position:static;transform:none;display:inline-flex;margin-bottom:12px}
+.back-btn:hover{transform:translateX(-2px)}
+.values-row{grid-template-columns:1fr}
+.product-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.service-flow{grid-template-columns:repeat(2,1fr)}
+.info-table td{display:block;padding:5px 0}
+.info-table td:first-child{width:auto}
+.gallery-grid{grid-template-columns:1fr}
+.card{padding:22px 20px}
+.lang-switch{top:14px;right:14px;padding:7px 12px;font-size:12px}
+}
+</style>
+</head><body data-i18n-page-title="info.pageTitle">
+<button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">中文</button>
+<div class="header">
+<a class="back-btn" href="index.html" data-i18n="info.backHome" data-original="← 返回首页">← Back to Home</a>
+<div class="header-logo">
+<img src="logo.png" alt="Ningbo Qingmiao Intelligent Technology Co., Ltd." data-i18n-alt="info.brandAlt" data-original-alt="宁波青苗智能科技有限公司">
+</div>
+<h1 data-i18n="info.heroTitle" data-original="宁波青苗智能科技有限公司">Ningbo Qingmiao Intelligent Technology Co., Ltd.</h1>
+<p data-i18n="info.heroSub" data-original="供应链四化整体解决方案服务商">Four-in-One supply chain solution provider</p>
+</div>
+<div class="nav-tabs">
+<a href="#" data-page="about" class="active" data-i18n="info.tabAbout" data-original="公司简介">Company Profile</a>
+<a href="#" data-page="product" data-i18n="info.tabProduct" data-original="产品中心">Products</a>
+<a href="#" data-page="news" data-i18n="info.tabNews" data-original="新闻动态">News</a>
+<a href="#" data-page="contact" data-i18n="info.tabContact" data-original="联系我们">Contact</a>
+<a href="#" data-page="service" data-i18n="info.tabService" data-original="售后服务">Service</a>
+</div>
+<div class="main">
+<div class="page-section active" id="page-about">
+<div class="page-title" data-i18n="info.tabAbout" data-original="公司简介">Company Profile</div>
+<div class="card"><h3 data-i18n="info.aboutTitle" data-original="关于青苗智能">About Qingmiao Intelligent</h3>
+<p data-i18n-html="info.aboutP1" data-original="宁波青苗智能科技有限公司（简称&quot;青苗智能&quot;）成立于&lt;strong&gt;2021年2月2日&lt;/strong&gt;，是&lt;strong&gt;&quot;一院一中心&quot;重点孵化的科技企业&lt;/strong&gt;，也是&lt;strong&gt;浙江大学孵化的创业公司&lt;/strong&gt;。公司总部位于浙江省宁波市鄞州区，入驻&lt;strong&gt;e舟智慧产业园&lt;/strong&gt;。
+">Ningbo Qingmiao Intelligent Technology Co., Ltd. ('Qingmiao Intelligent') was founded on <strong>February 2, 2021</strong>. It is a <strong>key incubated tech company of 'One Academy, One Center'</strong> and a <strong>startup incubated by Zhejiang University</strong>. Its headquarters are in Yinzhou District, Ningbo, Zhejiang, located in the <strong>eZhou Smart Industrial Park</strong>.</p><p style="margin-top:12px;">
+<span data-i18n-html="info.aboutP2" data-original="公司聚焦于&lt;strong&gt;汽配&lt;/strong&gt;和&lt;strong&gt;跨境电商&lt;/strong&gt;两大行业，业务定位为&lt;strong&gt;&quot;供应链四化（信息化、自动化、数字化、智能化）整体解决方案服务商&quot;&lt;/strong&gt;。核心产品涵盖&lt;strong&gt;OMS/WMS/TMS&lt;/strong&gt; 等供应链管理系统，其中&lt;strong&gt;WMS（仓库管理系统）&lt;/strong&gt;技术是公司的核心优势之一。">The company focuses on <strong>auto parts</strong> and <strong>cross-border e-commerce</strong>, positioning itself as a <strong>'Four-in-One supply chain (informatization, automation, digitalization, intelligence) solution provider'</strong>. Its core products include <strong>OMS/WMS/TMS</strong>, with <strong>WMS (warehouse management system)</strong> as a core strength.</span>
+</p></div>
+<div class="card"><h3 data-i18n="info.bizTitle" data-original="工商信息">Business Registration</h3><table class="info-table">
+<tbody><tr><td data-i18n="info.bizCompany" data-original="公司名称">Company Name</td><td data-i18n="info.bizCompanyValue" data-original="宁波青苗智能科技有限公司">Ningbo Qingmiao Intelligent Technology Co., Ltd.</td></tr>
+<tr><td data-i18n="info.bizAlias" data-original="公司别名">Alias</td><td data-i18n="info.bizAliasValue" data-original="青苗智能">Qingmiao Intelligent</td></tr>
+<tr><td data-i18n="info.bizLegal" data-original="法定代表人">Legal Representative</td><td data-i18n="info.bizLegalValue" data-original="曾小红">Zeng Xiaohong</td></tr>
+<tr><td data-i18n="info.bizFounded" data-original="成立日期">Founded</td><td data-i18n="info.bizFoundedValue" data-original="2021年2月2日">February 2, 2021</td></tr>
+<tr><td data-i18n="info.bizCapital" data-original="注册资本">Registered Capital</td><td data-i18n="info.bizCapitalValue" data-original="100万人民币">RMB 1 million</td></tr>
+<tr><td data-i18n="info.bizCredit" data-original="统一社会信用代码">Unified Social Credit Code</td><td data-i18n="info.bizCreditValue" data-original="91330212MA2J4QQ73X">91330212MA2J4QQ73X</td></tr>
+<tr><td data-i18n="info.bizRegNo" data-original="注册号">Registration No.</td><td data-i18n="info.bizRegNoValue" data-original="330212001123529">330212001123529</td></tr>
+<tr><td data-i18n="info.bizAddress" data-original="注册地址">Registered Address</td><td data-i18n="info.bizAddressValue" data-original="浙江省宁波市鄞州区学府路3号浙江大学（宁波校区）16号楼317">Room 317, Building 16, Zhejiang University (Ningbo Campus), No. 3 Xuefu Road, Yinzhou District, Ningbo, Zhejiang</td></tr>
+<tr><td data-i18n="info.bizType" data-original="公司类型">Company Type</td><td data-i18n="info.bizTypeValue" data-original="有限责任公司（自然人投资或控股）">Limited liability company (natural person investment or controlling)</td></tr>
+<tr><td data-i18n="info.bizEmployees" data-original="职工参保人数">Insured Employees</td><td data-i18n="info.bizEmployeesValue" data-original="3人">3</td></tr>
+<tr><td data-i18n="info.bizShareholders" data-original="股东结构">Shareholders</td><td data-i18n="info.bizShareholdersValue" data-original="曾小红（认缴99万，占99%）、曾涛（认缴1万，占1%）">Zeng Xiaohong (99%), Zeng Tao (1%)</td></tr>
+<tr><td data-i18n="info.bizPeople" data-original="主要人员">Key Personnel</td><td data-i18n="info.bizPeopleValue" data-original="曾小红（执行董事兼总经理）、余艳婷（监事）">Zeng Xiaohong (Executive Director and General Manager), Yu Yanting (Supervisor)</td></tr>
+<tr><td data-i18n="info.bizStatus" data-original="状态">Status</td><td data-i18n="info.bizStatusValue" data-original="存续">Active</td></tr>
+</tbody></table></div>
+<div class="card"><h3 data-i18n="info.bizScopeTitle" data-original="经营范围">Business Scope</h3><p data-i18n="info.bizScope" data-original="技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广；智能物料搬运装备销售；信息系统集成服务；供应链管理服务；人工智能应用软件开发；软件开发；软件外包服务；智能机器人销售；工业机器人销售；智能机器人的研发；货物进出口等。">Technical services, technology development, consulting, exchange, transfer, and promotion; sales of intelligent material handling equipment; information system integration; supply chain management services; AI application software development; software development; software outsourcing; intelligent robot sales; industrial robot sales; intelligent robot R&amp;D; import and export of goods.</p></div>
+<div class="card"><h3 data-i18n="info.implTitle" data-original="实施体系">Implementation Approach</h3><p data-i18n-html="info.implDesc" data-original="区别于传统的系统交付模式，青苗智能逐步构建了&lt;strong&gt;&quot;针对式设计、陪伴式交付、指标化落地&quot;&lt;/strong&gt;的实施体系。公司注重技术与业务的深度融合，通过打通MES与WMS系统壁垒，结合兼容多协议的WCS控制系统，实现生产执行与物流设备的全链路协同管理。">Unlike traditional system delivery, Qingmiao Intelligent builds a <strong>'targeted design, companion delivery, metric-based implementation'</strong> model. The company deeply integrates business and technology by connecting <strong>MES and WMS</strong> and using a multi-protocol <strong>WCS control system</strong> for end-to-end coordination of production execution and logistics equipment.</p></div>
+<div class="card"><h3 data-i18n="info.teamTitle" data-original="团队实力">Team Strength</h3><p data-i18n="info.teamDesc" data-original="公司拥有数十名从事品牌制造、软件、零售分销、快递物流、供应链等行业超过10年的资深顾问及技术人员，是中国流通领域最专业的物流信息化服务团队之一。">The company has dozens of senior consultants and technical experts with more than 10 years of experience in manufacturing, software, retail distribution, express logistics, and supply chain. It is one of China's most professional logistics informatization service teams in the circulation field.</p></div>
+<div class="card"><h3 data-i18n="info.founderTitle" data-original="创始人信息">Founder Information</h3><table class="info-table">
+<tbody><tr><td data-i18n="info.founderName" data-original="姓名">Name</td><td data-i18n="info.founderValueName" data-original="曾小红">Zeng Xiaohong</td></tr>
+<tr><td data-i18n="info.founderRole" data-original="职务">Position</td><td data-i18n="info.founderValueRole" data-original="公司执行董事兼总经理">Executive Director and General Manager</td></tr>
+<tr><td data-i18n="info.founderSocial" data-original="社会职务">Social Role</td><td data-i18n="info.founderValueSocial" data-original="宁波市龙岩商会监事">Supervisor of Ningbo Longyan Chamber of Commerce</td></tr>
+<tr><td data-i18n="info.founderEquity" data-original="持股比例">Equity</td><td data-i18n="info.founderValueEquity" data-original="99%">99%</td></tr>
+</tbody></table></div>
+<div class="card"><h3 data-i18n="info.cultureTitle" data-original="公司文化">Company Culture</h3><div class="values-row">
+<div class="value-item"><div class="icon">🎯</div><h4 data-i18n="info.culturePositionTitle" data-original="定位">Positioning</h4><p data-i18n="info.culturePositionDesc" data-original="供应链四化整体解决方案服务商">Four-in-One supply chain solution provider</p></div>
+<div class="value-item"><div class="icon">💡</div><h4 data-i18n="info.cultureIdeaTitle" data-original="理念">Philosophy</h4><p data-i18n="info.cultureIdeaDesc" data-original="针对式设计 · 陪伴式交付 · 指标化落地">Targeted design · Companion delivery · Metric-based implementation</p></div>
+<div class="value-item"><div class="icon">🤝</div><h4 data-i18n="info.cultureMissionTitle" data-original="使命">Mission</h4><p data-i18n="info.cultureMissionDesc" data-original="以科技赋能产业，助力企业数字化转型">Empower industry through technology and help enterprises transform digitally</p></div>
+</div></div>
+<div class="card"><h3 data-i18n="info.historyTitle" data-original="发展历程">Milestones</h3><ul>
+<li data-i18n-html="info.history1" data-original="&lt;strong&gt;2021年2月&lt;/strong&gt; — 公司正式成立，入驻e舟智慧产业园，创始团队组建"><strong>Feb 2021</strong> — Company established in eZhou Smart Industrial Park and founding team assembled</li>
+<li data-i18n-html="info.history2" data-original="&lt;strong&gt;2021年12月&lt;/strong&gt; — 联合融象数科、e舟智慧产业园发起&quot;华东数字化转型产业联盟&quot;，打造助力中小企业数字化转型的高端平台"><strong>Dec 2021</strong> — Co-founded the 'East China Digital Transformation Industry Alliance' with Rongxiang Digital and eZhou Smart Industrial Park</li>
+<li data-i18n-html="info.history3" data-original="&lt;strong&gt;2025年2月&lt;/strong&gt; — 宁波电视台《宁波新闻》专题报道《奋进实干开好局｜青苗智能科技：锚定两大行业 赋能产业提升》，公司获丰田等跨国企业订单"><strong>Feb 2025</strong> — Featured by Ningbo TV 'Ningbo News'; received orders from Toyota and other multinational companies</li>
+<li data-i18n-html="info.history4" data-original="&lt;strong&gt;2025年7月&lt;/strong&gt; — 创始人曾小红率国际教师培训班参访海伦钢琴股份有限公司"><strong>Jul 2025</strong> — Founder Zeng Xiaohong led international teacher training groups on a visit to Hailun Piano</li>
+<li data-i18n-html="info.history5" data-original="&lt;strong&gt;2025年10月&lt;/strong&gt; — 主办&quot;科技赋能产业，共探智能制造&quot;主题邀请会，与浙江大学软件学院展开产学研合作"><strong>Oct 2025</strong> — Hosted 'Technology Empowering Industry' themed conference and industry-university collaboration with Zhejiang University Software School</li>
+<li data-i18n-html="info.history6" data-original="&lt;strong&gt;2026年4月&lt;/strong&gt; — 联合温州电信与温州龙头阀门企业签署战略合作协议"><strong>Apr 2026</strong> — Signed strategic cooperation agreement with Wenzhou Telecom and a leading Wenzhou valve company</li>
+<li data-i18n-html="info.history7" data-original="&lt;strong&gt;2026年5月&lt;/strong&gt; — 创始人曾小红参加鄞州政协&quot;政协开放日——走进益企协商厅&quot;协商活动"><strong>May 2026</strong> — Founder Zeng Xiaohong participated in Yinzhou CPPCC consultation activities</li>
+</ul></div>
+<div class="card"><h3 data-i18n="info.clientsTitle" data-original="合作伙伴与客户">Partners and Customers</h3><p data-i18n="info.clientsIntro" data-original="客户覆盖新能源、汽车零部件、高端装备制造等多个领域：">Solutions have been applied in new energy, auto parts, high-end equipment manufacturing, and more:</p><ul>
+<li data-i18n-html="info.clients1" data-original="&lt;strong&gt;行业龙头&lt;/strong&gt; — 比亚迪、万向、航泰军工、孚能科技、浙江爱信宏达"><strong>Industry leaders</strong> — BYD, Wanxiang, Hangtai, Farasis Energy, Zhejiang Aisin Hongda</li>
+<li data-i18n-html="info.clients2" data-original="&lt;strong&gt;跨国企业&lt;/strong&gt; — 丰田等世界500强企业"><strong>Multinational enterprises</strong> — Toyota and other Fortune 500 companies</li>
+<li data-i18n-html="info.clients3" data-original="&lt;strong&gt;商超物流&lt;/strong&gt; — 服务国内一半以上的商超物流企业"><strong>Retail and logistics</strong> — Serving more than half of China's supermarket and logistics enterprises</li>
+<li data-i18n-html="info.clients4" data-original="&lt;strong&gt;战略合作&lt;/strong&gt; — 温州电信、温州龙头阀门企业"><strong>Strategic partners</strong> — Wenzhou Telecom and a leading Wenzhou valve company</li>
+<li data-i18n-html="info.clients5" data-original="&lt;strong&gt;典型案例&lt;/strong&gt; — 宁波精华电子科技股份有限公司（生产汽车前大灯调光电机、步进电机等汽车组件）在数字化改造中选择青苗智能作为仓储系统的软件合作商"><strong>Typical case</strong> — Ningbo Jinghua Electronics selected Qingmiao Intelligent as its warehouse system software partner for digital transformation</li>
+</ul></div>
+<div class="card"><h3 data-i18n="info.galleryTitle" data-original="企业风采">Company Gallery</h3><div class="gallery-grid">
+<div class="gallery-item"><img src="微信图片_20260806153619_52_147.jpg" alt="Qingmiao Intelligent company image" data-i18n-alt="info.galleryAlt" data-original-alt="青苗智能公司图片"></div>
+<div class="gallery-item"><img src="微信图片_20260806153620_53_147.jpg" alt="Qingmiao Intelligent company image" data-i18n-alt="info.galleryAlt" data-original-alt="青苗智能公司图片"></div>
+<div class="gallery-item"><img src="微信图片_20260806153621_54_147.jpg" alt="Qingmiao Intelligent company image" data-i18n-alt="info.galleryAlt" data-original-alt="青苗智能公司图片"></div>
+<div class="gallery-item"><img src="微信图片_20260806153622_55_147.jpg" alt="Qingmiao Intelligent company image" data-i18n-alt="info.galleryAlt" data-original-alt="青苗智能公司图片"></div>
+</div></div>
+</div>
+<div class="page-section" id="page-product">
+<div class="page-title" data-i18n="info.productTitle" data-original="产品中心">Products</div>
+<div class="card"><h3 data-i18n="info.productSystemTitle" data-original="核心产品体系">Core Product System</h3>
+<p data-i18n-html="info.productSystemDesc" data-original="公司拥有核心业务板块：&lt;strong&gt;OMS/WMS/TMS&lt;/strong&gt; 等供应链软件产品。其中&lt;strong&gt;WMS（仓库管理系统）&lt;/strong&gt;技术是公司的核心优势之一，已成功为多家制造及流通企业提供物流信息化解决方案。">The company's core business includes <strong>OMS/WMS/TMS</strong> supply chain software products. <strong>WMS (warehouse management system)</strong> is a core strength, providing logistics informatization solutions to manufacturers and distributors.</p></div>
+<div class="product-grid">
+<div class="product-card"><span class="emoji">📦</span><h4 data-i18n="info.productWmsTitle" data-original="WMS 仓库管理系统">WMS Warehouse Management System</h4><p data-i18n="info.productWmsDesc" data-original="公司的核心优势产品。覆盖入库、出库、盘点、库内调拨全流程，支持智能策略制定、全流程管控、数字化运营及设备对接。">Covers inbound, outbound, inventory, and transfer workflows, with intelligent strategy planning, full-process control, digital operations, and equipment integration.</p><span class="product-tag" data-i18n="info.coreTag" data-original="核心产品">Core Product</span></div>
+<div class="product-card"><span class="emoji">📋</span><h4 data-i18n="info.productOmsTitle" data-original="OMS 订单管理系统">OMS Order Management System</h4><p data-i18n="info.productOmsDesc" data-original="支持多渠道订单统一管理，涵盖订单接收、审核、拆分、合并、分配库存及物流追踪等环节，适用于电商及跨境贸易业务。">Unified multi-channel order management covering order receipt, review, split, merge, inventory allocation, and logistics tracking for e-commerce and cross-border trade.</p><span class="product-tag" data-i18n="info.supplyTag" data-original="供应链">Supply Chain</span></div>
+<div class="product-card"><span class="emoji">🚚</span><h4 data-i18n="info.productTmsTitle" data-original="TMS 运输管理系统">TMS Transportation Management System</h4><p data-i18n="info.productTmsDesc" data-original="运输计划制定、运力调度、在途监控及费用结算的全流程管理，支持多模式运输，优化物流成本。">Full-process management of transport planning, dispatch, tracking, and settlement, supporting multi-mode transport to optimize logistics costs.</p><span class="product-tag" data-i18n="info.supplyTag" data-original="供应链">Supply Chain</span></div>
+</div>
+<div class="card"><h3 data-i18n="info.integrationTitle" data-original="系统集成能力">System Integration Capability</h3><ul>
+<li data-i18n-html="info.integration1" data-original="&lt;strong&gt;MES-WMS 系统打通&lt;/strong&gt; — 实现生产执行与仓库管理的协同联动，消除信息孤岛"><strong>MES-WMS integration</strong> — Connect production execution and warehouse management to eliminate information silos</li>
+<li data-i18n-html="info.integration2" data-original="&lt;strong&gt;WCS 控制系统&lt;/strong&gt; — 兼容多协议，实现物流设备的统一调度与控制"><strong>WCS control system</strong> — Multi-protocol compatibility for unified scheduling and control of logistics equipment</li>
+<li data-i18n-html="info.integration3" data-original="&lt;strong&gt;全链路协同&lt;/strong&gt; — 从生产执行到物流设备的端到端数字化协同管理"><strong>Full-chain coordination</strong> — End-to-end digital coordination from production execution to logistics equipment</li>
+<li data-i18n-html="info.integration4" data-original="&lt;strong&gt;轻量化运维&lt;/strong&gt; — 切实解决制造企业数字化转型&quot;落地难、成本高&quot;的痛点"><strong>Lightweight operations</strong> — Address the pain points of high cost and difficult implementation in manufacturing digital transformation</li>
+</ul></div>
+</div>
+<div class="page-section" id="page-news">
+<div class="page-title" data-i18n="info.newsTitle" data-original="新闻动态">News</div>
+<div class="card">
+<div class="news-item">
+<div class="date" data-i18n="info.news1Date" data-original="2026年8月">Aug 2026</div>
+<h4 data-i18n="info.news1Title" data-original="宁波市经信局：新增24家企业入选2026年度省级数字化服务商分类名单">Ningbo adds 24 enterprises to 2026 provincial digital service provider list</h4>
+<p data-i18n="info.news1Desc" data-original="2026年8月3日，宁波市经信局发布消息，宁波新增24家企业入选2026年度省级数字化服务商分类名单（行业型14家、场景型10家），数量居全省前列。">On August 3, 2026, the Ningbo Economic and Information Technology Bureau announced 24 newly selected provincial digital service providers (14 industry-oriented and 10 scenario-oriented), ranking among the top in the province.</p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news2Date" data-original="2026年5月">May 2026</div>
+<h4 data-i18n="info.news2Title" data-original="创始人曾小红参加鄞州政协&quot;政协开放日——走进益企协商厅&quot;协商活动">Founder Zeng Xiaohong joined the Yinzhou CPPCC consultation activity</h4>
+<p><span data-i18n="info.news2Desc" data-original="在&quot;AI赋能，构建OPC创业新生态&quot;专题协商活动中，曾小红建议提供有针对性帮扶政策，助力企业&quot;轻装上阵&quot;。">At the consultation themed 'AI empowerment and building a new OPC entrepreneurship ecosystem', Zeng Xiaohong suggested providing targeted support policies to help enterprises move forward more lightly.</span><br>
+<a class="news-link" href="http://www.nbzx.gov.cn/col/col1229607411/art/2026/art_6daa0d9b556245698f9c0c9f598b3a1f.html" target="_blank" data-i18n="info.news2Link1" data-original="宁波市政协官网 →">Ningbo CPPCC website →</a>
+<a class="news-link" href="http://www.lybs.com.cn/html/2026-05/30/content_118660_19578809.htm" target="_blank" data-i18n="info.news2Link2" data-original="联谊报 →">Lianyi Bao →</a></p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news3Date" data-original="2026年4月">Apr 2026</div>
+<h4 data-i18n="info.news3Title" data-original="青苗智能联合温州电信与温州龙头阀门企业达成战略合作">Qingmiao Intelligent reached strategic cooperation with Wenzhou Telecom and a leading Wenzhou valve enterprise</h4>
+<p><span data-i18n="info.news3Desc" data-original="三方正式签署战略合作协议，标志着企业技术服务能力迈上新台阶，也是&quot;一院一中心&quot;推动科研成果转化的具体成果。">The three parties signed a strategic cooperation agreement, marking a new step in the company's technical service capability and a concrete result of technology commercialization.</span><br>
+<a class="news-link" href="https://mp.weixin.qq.com/s/5EByiDFEifrgOpTsFG907g" target="_blank" data-i18n="info.news3Link" data-original="查看原文 →">View source →</a></p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news4Date" data-original="2025年11月">Nov 2025</div>
+<h4 data-i18n="info.news4Title" data-original="自主研发WMS技术成果获报道，已覆盖多个行业龙头企业">Self-developed WMS technology reported; covering multiple industry-leading enterprises</h4>
+<p data-i18n="info.news4Desc" data-original="青苗智能凭借自主研发的WMS技术，已成功为多家制造企业提供物流信息化解决方案，在新能源、汽车零部件及高端装备制造等领域落地见效，覆盖比亚迪、万向、航泰军工、孚能科技及浙江爱信宏达等行业龙头企业。">Qingmiao Intelligent has provided logistics informatization solutions to multiple manufacturers, with applications in new energy, auto parts, and high-end equipment manufacturing, covering BYD, Wanxiang, Hangtai, Farasis Energy, and Zhejiang Aisin Hongda.</p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news5Date" data-original="2025年10月">Oct 2025</div>
+<h4 data-i18n="info.news5Title" data-original="主办&quot;科技赋能产业，共探智能制造&quot;主题邀请会（浙江大学软件学院）">Hosted 'Technology Empowering Industry, Exploring Intelligent Manufacturing' invitation conference at Zhejiang University Software School</h4>
+<p><span data-i18n="info.news5Desc" data-original="10月27日，主题邀请会在浙江大学软件学院成功举行，总经理曾小红压轴分享《物流信息化解决方案》，详细介绍WMS在智能策略制定、全流程管控、数字化运营及设备对接上的核心功能。">The conference was held on October 27. General Manager Zeng Xiaohong shared the 'Logistics Informatization Solutions' presentation, detailing WMS intelligent strategy, full-process control, digital operations, and equipment integration.</span><br>
+<a class="news-link" href="http://mp.weixin.qq.com/s?__biz=MzA3NTQ1MDQ3Mg==&amp;mid=2649808332&amp;idx=1&amp;sn=7f1eb635adec721aca8b35921b5391fe" target="_blank" data-i18n="info.news5Link" data-original="查看原文 →">View source →</a></p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news6Date" data-original="2025年8月">Aug 2025</div>
+<h4 data-i18n="info.news6Title" data-original="参与宁波市软件人才创新基地企业宣讲招聘会">Participated in Ningbo Software Talent Innovation Base recruitment conference</h4>
+<p><span data-i18n="info.news6Desc" data-original="基地邀请青苗智能等六家软件类及智能制造类优质企业，集中开展企业宣讲招聘会。">The base invited Qingmiao Intelligent and five other quality software and intelligent manufacturing companies to hold centralized company presentations and recruitment.</span><br>
+<a class="news-link" href="http://mp.weixin.qq.com/s?__biz=MzU4NjI4OTYzMQ==&amp;mid=2247530949&amp;idx=3&amp;sn=6e3cec1ec5a3c88cdb72ca5c67a6219a" target="_blank" data-i18n="info.news6Link" data-original="查看原文 →">View source →</a></p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news7Date" data-original="2025年7月">Jul 2025</div>
+<h4 data-i18n="info.news7Title" data-original="创始人率国际教师培训班参访海伦钢琴">Founder led international teacher training groups on a visit to Hailun Piano</h4>
+<p data-i18n="info.news7Desc" data-original="由宁波职业技术大学校外实习导师团队、青苗智能总经理曾小红率领的三大国际教师培训班，参访海伦钢琴股份有限公司（信息来源：中国乐器协会）。">Led by Ningbo Polytechnic off-campus internship mentor team and Qingmiao Intelligent General Manager Zeng Xiaohong, three international teacher training groups visited Hailun Piano Co., Ltd.</p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news8Date" data-original="2025年2月">Feb 2025</div>
+<h4 data-i18n="info.news8Title" data-original="宁波电视台《宁波新闻》专题报道《奋进实干开好局｜青苗智能科技：锚定两大行业 赋能产业提升》">Ningbo TV 'Ningbo News' featured Qingmiao Intelligent</h4>
+<p><span data-i18n="info.news8Desc" data-original="报道提到，公司已完成技术服务团队构建，并与广东技术服务团队达成合作，拿到丰田等跨国企业订单，服务了国内一半以上的商超物流企业。">The report noted that the company had completed its technical service team, cooperated with a technical service team in Guangdong, received orders from Toyota and other multinational companies, and served more than half of China's supermarket and logistics enterprises.</span><br>
+<a class="news-link" href="http://web.ncmc.nbtv.cn/cms/nbdst//xwdsg/nb/40245916.shtml" target="_blank" data-i18n="info.news8Link" data-original="查看原文 →">View source →</a></p>
+</div>
+<div class="news-item">
+<div class="date" data-i18n="info.news9Date" data-original="2021年12月">Dec 2021</div>
+<h4 data-i18n="info.news9Title" data-original="联合融象数科、e舟智慧产业园发起&quot;华东数字化转型产业联盟&quot;筹备会议">Co-founded 'East China Digital Transformation Industry Alliance' preparation meeting</h4>
+<p><span data-i18n="info.news9Desc" data-original="联盟定位为助力鄞州、宁波、华东区中小企业数字化转型的高端平台。">The alliance is positioned as a high-end platform to support digital transformation for SMEs in Yinzhou, Ningbo, and East China.</span><br>
+<a class="news-link" href="https://www.kczg.org.cn/zt530activity/newsDetail?id=6035355" target="_blank" data-i18n="info.news9Link" data-original="查看原文 →">View source →</a></p>
+</div>
+</div></div>
+<div class="page-section" id="page-contact">
+<div class="page-title" data-i18n="info.contactTitle" data-original="联系我们">Contact Us</div>
+<div class="card"><h3 data-i18n="info.contactCardTitle" data-original="联系方式">Contact Information</h3>
+<p style="margin-bottom:16px;" data-i18n="info.contactIntro" data-original="欢迎随时与我们取得联系。">Feel free to reach out to us.</p>
+<div class="contact-grid">
+<div class="contact-item"><span class="emoji">📍</span><div><div class="label" data-i18n="info.contactAddressLabel" data-original="公司地址">Address</div><div class="value" data-i18n="info.contactAddressValue" data-original="浙江省宁波市鄞州区学府路3号浙江大学（宁波校区）16号楼317">Room 317, Building 16, Zhejiang University (Ningbo Campus), No. 3 Xuefu Road, Yinzhou District, Ningbo, Zhejiang</div></div></div>
+<div class="contact-item"><span class="emoji">📞</span><div><div class="label" data-i18n="info.contactPhoneLabel" data-original="联系电话">Phone</div><div class="value" data-i18n="info.contactPhoneValue" data-original="0574-8800 1234">0574-8800 1234</div></div></div>
+<div class="contact-item"><span class="emoji">📧</span><div><div class="label" data-i18n="info.contactEmailLabel" data-original="电子邮箱">Email</div><div class="value" data-i18n="info.contactEmailValue" data-original="contact@qingmiaotech.com">contact@qingmiaotech.com</div></div></div>
+<div class="contact-item"><span class="emoji">💬</span><div><div class="label" data-i18n="info.contactWechatLabel" data-original="微信公众号">WeChat Official Account</div><div class="value" data-i18n="info.contactWechatValue" data-original="宁波青苗智能有限公司">Ningbo Qingmiao Intelligent Co., Ltd.</div></div></div>
+</div></div>
+<div class="card"><h3 data-i18n="info.bizCoopTitle" data-original="商务合作">Business Cooperation</h3><p data-i18n-html="info.bizCoopDesc" data-original="邮箱：&lt;strong&gt;partner@qingmiaotech.com&lt;/strong&gt;，2个工作日内回复。">Email: <strong>partner@qingmiaotech.com</strong>, replies within 2 business days.</p></div>
+</div>
+<div class="page-section" id="page-service">
+<div class="page-title" data-i18n="info.serviceTitle" data-original="售后服务">After-sales Service</div>
+<div class="card"><h3 data-i18n="info.servicePromiseTitle" data-original="服务承诺">Service Commitment</h3><p data-i18n="info.servicePromiseDesc" data-original="优先保障客户利益，立足于&quot;针对式设计、陪伴式交付、指标化落地&quot;的实施理念。">Put customer interests first, based on the implementation philosophy of targeted design, companion delivery, and metric-based results.</p></div>
+<h3 style="font-size:16px;color:#111827;margin-bottom:18px;font-weight:600;" data-i18n="info.serviceFlowTitle" data-original="服务流程">Service Process</h3>
+<div class="service-flow">
+<div class="flow-step"><div class="step-num">1</div><h4 data-i18n="info.flow1Title" data-original="需求调研">Requirement Research</h4><p data-i18n="info.flow1Desc" data-original="深入了解客户业务流程与痛点">Deeply understand customer business processes and pain points</p></div>
+<div class="flow-step"><div class="step-num">2</div><h4 data-i18n="info.flow2Title" data-original="针对设计">Targeted Design</h4><p data-i18n="info.flow2Desc" data-original="基于需求方案进行系统设计">Design the system based on requirement analysis</p></div>
+<div class="flow-step"><div class="step-num">3</div><h4 data-i18n="info.flow3Title" data-original="陪伴交付">Companion Delivery</h4><p data-i18n="info.flow3Desc" data-original="实施部署与业务陪跑">Implementation, deployment, and business support</p></div>
+<div class="flow-step"><div class="step-num">4</div><h4 data-i18n="info.flow4Title" data-original="指标落地">Metric-based Results</h4><p data-i18n="info.flow4Desc" data-original="以量化指标评估实施效果">Evaluate implementation outcomes with quantitative indicators</p></div>
+</div>
+<div class="card"><h3 data-i18n="info.serviceContentTitle" data-original="服务内容">Service Scope</h3><ul>
+<li data-i18n-html="info.serviceContent1" data-original="&lt;strong&gt;产品质保：&lt;/strong&gt;12个月免费质保，质保期内免费修复"><strong>Product warranty:</strong> 12-month free warranty and free repair within the warranty period</li>
+<li data-i18n-html="info.serviceContent2" data-original="&lt;strong&gt;系统运维：&lt;/strong&gt;7×12小时在线技术支持和远程巡检"><strong>System operations:</strong> 7×12 online technical support and remote inspections</li>
+<li data-i18n-html="info.serviceContent3" data-original="&lt;strong&gt;版本升级：&lt;/strong&gt;小版本免费叠代更新，大版本享受优惠价格"><strong>Version upgrades:</strong> Free minor version updates and discounted major version upgrades</li>
+<li data-i18n-html="info.serviceContent4" data-original="&lt;strong&gt;技术培训：&lt;/strong&gt;产品使用及管理员操作培训"><strong>Technical training:</strong> Product usage and administrator training</li>
+<li data-i18n-html="info.serviceContent5" data-original="&lt;strong&gt;定制二开：&lt;/strong&gt;基于标准产品的个性化定制与二次开发"><strong>Custom development:</strong> Personalization and secondary development based on standard products</li>
+</ul></div>
+<div class="card"><h3 data-i18n="info.serviceHotlineTitle" data-original="服务热线">Service Hotline</h3><p data-i18n-html="info.serviceHotlineDesc" data-original="技术支持：&lt;strong&gt;0574-8800 5678&lt;/strong&gt;（工作日 9:00-18:00）&lt;br&gt;紧急故障：&lt;strong&gt;0574-8800 5679&lt;/strong&gt;（7×24小时）">Technical support: <strong>0574-8800 5678</strong> (9:00-18:00 on workdays)<br>Emergency: <strong>0574-8800 5679</strong> (7×24 hours)</p></div>
+</div>
+</div>
+<div class="footer"><span data-i18n="info.copyright" data-original="© 2026 宁波青苗智能科技有限公司">© 2026 Ningbo Qingmiao Intelligent Technology Co., Ltd.</span> &nbsp;·&nbsp; <a href="index.html" data-i18n="info.footerHome" data-original="首页">Home</a> &nbsp;·&nbsp; <a href="info.html?page=contact" data-i18n="info.footerContact" data-original="联系方式">Contact</a></div>
+<script src="i18n.js"></script>
+<script>
+(function(){
+var tabs = document.querySelectorAll(".nav-tabs a");
+var sections = document.querySelectorAll(".page-section");
+function switchPage(page){
+for(var i=0;i<sections.length;i++){sections[i].classList.remove("active");}
+var target = document.getElementById("page-"+page);
+if(target){target.classList.add("active");}
+for(var i=0;i<tabs.length;i++){tabs[i].classList.remove("active");}
+for(var i=0;i<tabs.length;i++){if(tabs[i].getAttribute("data-page")===page){tabs[i].classList.add("active");break;}}
+var url = new URL(window.location);
+url.searchParams.set("page",page);
+window.history.replaceState({},"",url);
+}
+for(var i=0;i<tabs.length;i++){(function(tab){
+tab.addEventListener("click",function(e){
+e.preventDefault();
+switchPage(this.getAttribute("data-page"));
+});
+})(tabs[i]);}
+var params = new URLSearchParams(window.location.search);
+var defaultPage = params.get("page")||"about";
+switchPage(defaultPage);
+})();
+</script>
+
+</body></html>
