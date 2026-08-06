@@ -47,6 +47,10 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .info-table td{padding:10px 12px;border-bottom:1px solid #f3f4f6}
 .info-table td:first-child{color:#6b7280;width:100px;white-space:nowrap;vertical-align:top;font-weight:500}
 .info-table td:last-child{color:#111827}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery-item{overflow:hidden;border-radius:10px;border:1px solid rgba(36,120,243,.08);background:#f8faff}
+.gallery-item img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .35s}
+.gallery-item:hover img{transform:scale(1.03)}
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .product-card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-radius:16px;padding:26px 24px;border:1px solid rgba(255,255,255,.6);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;position:relative;overflow:hidden}
 .product-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2478f3,#818cf8);opacity:0;transition:opacity .35s}
@@ -89,6 +93,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .service-flow{grid-template-columns:repeat(2,1fr)}
 .info-table td{display:block;padding:5px 0}
 .info-table td:first-child{width:auto}
+.gallery-grid{grid-template-columns:1fr}
 .card{padding:22px 20px}
 }
 </style>
@@ -124,7 +129,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <tr><td>注册资本</td><td>100万人民币</td></tr>
 <tr><td>统一社会信用代码</td><td>91330212MA2J4QQ73X</td></tr>
 <tr><td>注册号</td><td>330212001123529</td></tr>
-<tr><td>注册地址</td><td>浙江省宁波市鄞州区学府路5号16号楼204</td></tr>
+<tr><td>注册地址</td><td>浙江省宁波市鄞州区学府路3号浙江大学（宁波校区）16号楼317</td></tr>
 <tr><td>公司类型</td><td>有限责任公司（自然人投资或控股）</td></tr>
 <tr><td>职工参保人数</td><td>3人</td></tr>
 <tr><td>股东结构</td><td>曾小红（认缴99万，占99%）、曾涛（认缴1万，占1%）</td></tr>
@@ -161,6 +166,12 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <li><strong>战略合作</strong> — 温州电信、温州龙头阀门企业</li>
 <li><strong>典型案例</strong> — 宁波精华电子科技股份有限公司（生产汽车前大灯调光电机、步进电机等汽车组件）在数字化改造中选择青苗智能作为仓储系统的软件合作商</li>
 </ul></div>
+<div class="card"><h3>企业风采</h3><div class="gallery-grid">
+<div class="gallery-item"><img src="微信图片_20260806153619_52_147.jpg" alt="青苗智能公司图片"></div>
+<div class="gallery-item"><img src="微信图片_20260806153620_53_147.jpg" alt="青苗智能公司图片"></div>
+<div class="gallery-item"><img src="微信图片_20260806153621_54_147.jpg" alt="青苗智能公司图片"></div>
+<div class="gallery-item"><img src="微信图片_20260806153622_55_147.jpg" alt="青苗智能公司图片"></div>
+</div></div>
 </div>
 <div class="page-section" id="page-product">
 <div class="page-title">产品中心</div>
@@ -239,7 +250,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <div class="card"><h3>联系方式</h3>
 <p style="margin-bottom:16px;">欢迎随时与我们取得联系。</p>
 <div class="contact-grid">
-<div class="contact-item"><span class="emoji">📍</span><div><div class="label">公司地址</div><div class="value">浙江省宁波市鄞州区学府路5号16号楼204</div></div></div>
+<div class="contact-item"><span class="emoji">📍</span><div><div class="label">公司地址</div><div class="value">浙江省宁波市鄞州区学府路3号浙江大学（宁波校区）16号楼317</div></div></div>
 <div class="contact-item"><span class="emoji">📞</span><div><div class="label">联系电话</div><div class="value">0574-8800 1234</div></div></div>
 <div class="contact-item"><span class="emoji">📧</span><div><div class="label">电子邮箱</div><div class="value">contact@qingmiaotech.com</div></div></div>
 <div class="contact-item"><span class="emoji">💬</span><div><div class="label">微信公众号</div><div class="value">宁波青苗智能有限公司</div></div></div>
