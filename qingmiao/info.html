@@ -73,6 +73,8 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .contact-item .emoji{font-size:22px;flex-shrink:0;margin-top:2px}
 .contact-item .label{font-size:13px;color:#9ca3af;margin-bottom:2px}
 .contact-item .value{font-size:15px;color:#111827;font-weight:500}
+.contact-item .value.wechat-link{color:#2478f3;text-decoration:none;border-bottom:1px dashed rgba(36,120,243,.35);transition:color .25s}
+.contact-item .value.wechat-link:hover{color:#1a3a6f;border-bottom-color:#1a3a6f}
 .service-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
 .flow-step{text-align:center;padding:22px 14px;background:linear-gradient(135deg,#f8fafc,#f0f4ff);border-radius:12px;border:1px solid rgba(36,120,243,.06);transition:transform .3s}
 .flow-step:hover{transform:translateY(-3px)}
@@ -257,7 +259,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <div class="contact-item"><span class="emoji">📍</span><div><div class="label" data-i18n="info.contactAddressLabel">公司地址</div><div class="value" data-i18n="info.contactAddressValue">浙江省宁波市鄞州区学府路3号浙江大学（宁波校区）16号楼318</div></div></div>
 <div class="contact-item"><span class="emoji">📞</span><div><div class="label" data-i18n="info.contactPhoneLabel">联系电话</div><div class="value" data-i18n="info.contactPhoneValue">0574-8800 1234</div></div></div>
 <div class="contact-item"><span class="emoji">📧</span><div><div class="label" data-i18n="info.contactEmailLabel">电子邮箱</div><div class="value" data-i18n="info.contactEmailValue">contact@qingmiaotech.com</div></div></div>
-<div class="contact-item"><span class="emoji">💬</span><div><div class="label" data-i18n="info.contactWechatLabel">微信公众号</div><div class="value" data-i18n="info.contactWechatValue">宁波青苗智能有限公司</div></div></div>
+<div class="contact-item"><span class="emoji">💬</span><div><div class="label" data-i18n="info.contactWechatLabel">微信公众号</div><a class="value wechat-link" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=Mzg2MjYzODY3Nw==&amp;scene=124#wechat_redirect" target="_blank" rel="noopener noreferrer" data-i18n="info.contactWechatValue">宁波青苗智能有限公司</a></div></div>
 </div></div>
 <div class="card"><h3 data-i18n="info.bizCoopTitle">商务合作</h3><p data-i18n-html="info.bizCoopDesc">邮箱：<strong>partner@qingmiaotech.com</strong>，2个工作日内回复。</p></div>
 </div>
